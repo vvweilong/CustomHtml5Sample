@@ -128,7 +128,6 @@ class BaseCordovaFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
             cordovaInit()
             val root = inflater.inflate(R.layout.fragment_base_cordova, container, false)
-
             return root
     }
 
@@ -136,7 +135,7 @@ class BaseCordovaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val webContainer = view.findViewById<FrameLayout>(R.id.root_container)
         webContainer.addView(cordovaWebViewImpl?.view,FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,FrameLayout.LayoutParams.MATCH_PARENT))
-        cordovaWebViewImpl?.loadUrl("https://www.baidu.com")
+        cordovaWebViewImpl?.loadUrl("file:///android_asset/cordova_index.html")
     }
 
     private fun cordovaInit() {
