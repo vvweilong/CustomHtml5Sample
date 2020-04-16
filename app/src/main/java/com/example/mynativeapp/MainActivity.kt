@@ -1,12 +1,15 @@
 package com.example.mynativeapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.mynativeapp.jsbridge.BaseJsBridgeFragment
+import org.apache.cordova.CordovaActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +29,11 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = PageAdapter(supportFragmentManager,FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
 
     }
-
+    fun jump(v:View?){
+        startActivity(
+            Intent(this,CordovaActivity::class.java)
+        )
+    }
 
     inner class PageAdapter(fm: FragmentManager,behavor:Int) : FragmentStatePagerAdapter(fm,behavor) {
         override fun getItem(position: Int): Fragment {

@@ -7,7 +7,12 @@
     android:orientation="vertical"
     android:id="@+id/container"
     tools:context=".MainActivity">
-    
+    <Button
+        android:textAllCaps="false"
+        android:text="跳转"
+        android:onClick="jump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"

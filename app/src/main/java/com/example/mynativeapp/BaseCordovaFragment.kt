@@ -116,6 +116,9 @@ class BaseCordovaFragment : Fragment() {
                 return super.hasPermission(permission)
             }
         }
+        for (pluginEntry in configXmlParser.pluginEntries) {
+            Log.i(TAG,"plugin  :${pluginEntry.pluginClass}")
+        }
     }
 
     fun loadUrl(url:String?){
