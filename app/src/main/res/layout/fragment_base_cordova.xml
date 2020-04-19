@@ -6,7 +6,7 @@
     android:id="@+id/root_container"
     android:orientation="vertical"
     android:background="@color/colorAccent"
-    tools:context=".BaseCordovaFragment">
+    tools:context=".cordova.BaseCordovaFragment">
 <!--    <WebView-->
 <!--        android:id="@+id/native_webview"-->
 <!--        android:layout_width="match_parent"-->

@@ -17,7 +17,7 @@
        under the License.
 */
 
-package com.example.mynativeapp.cordova.whitelist;
+package com.example.mynativeapp.cordova.plugins.whitelist;
 
 import android.content.Context;
 

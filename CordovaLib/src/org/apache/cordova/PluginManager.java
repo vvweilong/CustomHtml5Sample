@@ -18,16 +18,17 @@
  */
 package org.apache.cordova;
 
-import java.util.Collection;
-import java.util.LinkedHashMap;
-
-import org.json.JSONException;
-
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Debug;
+import android.util.Log;
+
+import org.json.JSONException;
+
+import java.util.Collection;
+import java.util.LinkedHashMap;
 
 /**
  * PluginManager is exposed to JavaScript in the Cordova WebView.
@@ -381,6 +382,7 @@ public class PluginManager {
     public boolean shouldAllowNavigation(String url) {
         for (PluginEntry entry : this.entryMap.values()) {
             CordovaPlugin plugin = pluginMap.get(entry.service);
+            Log.i(TAG, "shouldAllowNavigation: "+entry.service);
             if (plugin != null) {
                 Boolean result = plugin.shouldAllowNavigation(url);
                 if (result != null) {
@@ -427,6 +429,7 @@ public class PluginManager {
     public Boolean shouldOpenExternalUrl(String url) {
         for (PluginEntry entry : this.entryMap.values()) {
             CordovaPlugin plugin = pluginMap.get(entry.service);
+            Log.i(TAG, "shouldOpenExternalUrl: "+entry.service);
             if (plugin != null) {
                 Boolean result = plugin.shouldOpenExternalUrl(url);
                 if (result != null) {
@@ -448,6 +451,7 @@ public class PluginManager {
     public boolean onOverrideUrlLoading(String url) {
         for (PluginEntry entry : this.entryMap.values()) {
             CordovaPlugin plugin = pluginMap.get(entry.service);
+            Log.i(TAG, "onOverrideUrlLoading: "+entry.service);
             if (plugin != null && plugin.onOverrideUrlLoading(url)) {
                 return true;
             }

@@ -23,6 +23,6 @@
 23    android:versionName="1.0" >
 24
 25    <uses-sdk android:minSdkVersion="19" />
-25-->/Users/wangfang/demos/MyNativeApp/CordovaLib/AndroidManifest.xml
+25-->/Users/zhuxiaolong/9f/CustomHtml5Sample/CordovaLib/AndroidManifest.xml
 26
 27</manifest>
